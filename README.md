@@ -1,2 +1,0 @@
-# sfun
- Splash

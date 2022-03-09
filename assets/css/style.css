@@ -71,18 +71,18 @@ body.light-edition {
     cursor: var(--cursor-pointer); }
 
 .dark-edition {
-  --primary-color: #ff0000;
+  --primary-color: #fd79e2;
   --primary-hover-light: rgba(253, 121, 226, .1);
   --primary-hover-dark: #f047ce;
-  --title-color: #fff1fc;
+  --title-color: #ec6fd2;
   --bg-collectible:#1f283e;
-  --bg-primary: #ff0000;
-  --bg-secondary: #ffffff;
+  --bg-primary: #0d141a;
+  --bg-secondary: #121a21;
   --bg-secondary-light: rgba(18, 26, 33, .5);
-  --bg-tertiary: #ff0000;
-  --text-primary: #ffffff;
-  --text-primary-light: rgba(255, 255, 255, 0.5);
-  --text-footer: #ffffff;
+  --bg-tertiary: #202940;
+  --text-primary: #9d9db4;
+  --text-primary-light: rgba(157, 157, 180, .5);
+  --text-footer: #9d9db4;
   --heading-color: #ffffff;
   --subheading-color: rgba(255, 255, 255, .3);
   --modal-border-text: #707070;
@@ -100,15 +100,15 @@ body.light-edition {
   --scrollbar-thumb-hover: linear-gradient(13deg, #414166 14%,#eb7bd6 64%); }
 
 .light-edition {
-  --primary-color: #ff0000;
+  --primary-color: #202060;
   --primary-hover-light: rgba(32, 32, 96, .1);
   --primary-hover-dark: #06064a;
   --bg-collectible:#ffff;
   --title-color: #202040;
-  --bg-primary: #f71111;
+  --bg-primary: #f4f7fb;
   --bg-secondary: #ffffff;
   --bg-secondary-light: rgba(255, 255, 255, .5);
-  --bg-tertiary: rgb(255, 0, 0);
+  --bg-tertiary: #fff;
   --text-primary: #4c4c6f;
   --text-primary-light: rgba(76, 76, 111, .5);
   --text-footer: rgba(76, 76, 111, .5);
@@ -197,7 +197,7 @@ textarea, input {
 .dark-edition #bridgeActions,
 .dark-edition #categoryDropdown,
 .dark-edition .dropdown-primary {
-  background-color: #202139;
+  background-color: var(--bg-secondary);
   color: var(--primary-color);
   border: 0.2rem solid var(--primary-color);
   border-radius: 0.8rem;
@@ -246,7 +246,7 @@ textarea, input {
 
 .light-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item,
 .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item {
-  color: #ff0a0a;
+  color: var(--text-primary);
   padding: 1rem 1.2rem; }
   .light-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item:hover,
   .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item:hover {
@@ -929,7 +929,7 @@ textarea, input {
     .nftHeader .header-profile .card-body,
     .nftHeader .header-profile .header-left {
       position: static;
-      background-color: #ffc5c5; }
+      background-color: var(--bg-secondary); }
       .nftListing .card-profile .card-body .text-truncate a,
       .nftListing .card-profile .header-left .text-truncate a,
       .nftListing .header-profile .card-body .text-truncate a,
@@ -1890,7 +1890,7 @@ textarea, input {
     padding: 1.5rem;
     color: var(--modal-text);
     border-bottom: 0.1rem solid var(--modal-border-text);
-    background-color: #181a29; }
+    background-color: var(--bg-primary); }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-header h5.modal-title,
     .light-edition .main-panel .modal-dialog .modal-content .modal-header h5.modal-title {
       font-family: "Baloo 2", sans-serif;
@@ -1923,7 +1923,7 @@ textarea, input {
     .dark-edition .main-panel .modal-dialog .modal-content .modal-body .container,
     .light-edition .main-panel .modal-dialog .modal-content .modal-body .container {
       border-radius: 0.4rem;
-      background-color: #181b2a;
+      background-color: var(--bg-primary);
       margin-bottom: 1rem; }
     .dark-edition .main-panel .modal-dialog .modal-content .modal-body label,
     .light-edition .main-panel .modal-dialog .modal-content .modal-body label {
@@ -2145,7 +2145,7 @@ textarea, input {
       font-size: 1.3rem;
       font-weight: 500;
       letter-spacing: 0.32px;
-      color: #181a29; }
+      color: var(--modal-text); }
       .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label:hover,
       .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label:hover {
         cursor: var(--cursor-pointer); }
@@ -2267,7 +2267,7 @@ textarea, input {
         color: var(--primary-color); }
   .dark-edition .main-panel .modal-dialog .modal-content .modal-footer,
   .light-edition .main-panel .modal-dialog .modal-content .modal-footer {
-    background-color: #181b28;
+    background-color: var(--bg-primary);
     border-top: 0.1rem solid var(--modal-border-text);
     display: flex;
     flex-direction: column;
@@ -2521,8 +2521,9 @@ textarea, input {
   background-image: none; }
   .dark-edition .sidebar::before,
   .light-edition .sidebar::before {
-    background-color: var(--bg-tertiary);
-    font-size: 1.6rem; }
+    background-color: #010027;
+    font-size: 1.6rem;
+  }
   @media only screen and (max-width: 991px) {
     .dark-edition .sidebar,
     .light-edition .sidebar {
@@ -2815,7 +2816,7 @@ textarea, input {
     display: flex;
     align-items: center;
     font-size: 1.4rem;
-    color: #ffffff;
+    color: var(--bg-primary);
     margin: 2rem 0 3rem 0;
     font-weight: 700;
     text-transform: uppercase;
@@ -2857,7 +2858,7 @@ textarea, input {
   .light-edition .main-panel .nftHeader-stakingOptions-container {
     display: flex;
     margin-bottom: 3rem;
-    background-color: #202436; }
+    background-color: var(--bg-secondary); }
     @media only screen and (max-width: 87.5em) {
       .dark-edition .main-panel .nftHeader-stakingOptions-container,
       .light-edition .main-panel .nftHeader-stakingOptions-container {

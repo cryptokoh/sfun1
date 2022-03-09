@@ -811,7 +811,7 @@ function TncDapp() {
                 this.lastNftIndex = -1;
 
                 $('#myNftsPage').css({
-                    'display': 'grid', 
+                    'display': 'grid',
                     'grid-template-columns': 'repeat(auto-fill, minmax(25rem, 1fr)',
                     'grid-gap': '2rem'
                 });
@@ -1342,15 +1342,15 @@ function TncDapp() {
                         toastr.remove();
                         toastr["success"]('Transaction has been finished.', "Success");
                         $("#nftSubmit").removeClass("disabled");
-                        
+
                         _this.loadPage('');
 
                         $('#nftNewModal').modal('hide');
 
                         if(chain_id != '1') {
-                            _alert('<div style="font-size: 1.6rem;">Your NFT has been successfully created!<br/><br/>You may want to sell your NFT from within your <a href="collectibles.html">wallet</a> in our <a href="market.html">marketplace</a> (only 2% sale fees, custom royalties and more).<br/><br/>You can also create your own marketplace using our <a href="market-builder.html">Market Builder</a> and set yourself apart from the competition!<br/><br/>Free white-label solution available on <a href="https://github.com/Unifty/UniftyDapp" target="_blank">Github</a>.</div>');
+                            _alert('<div style="font-size: 1.6rem;">Your Splash NFT has been successfully created!<br/><br/><br/></div>');
                         }else{
-                            _alert('<div style="font-size: 1.6rem;">Your NFT has been successfully created!<br/><br/>You can create your own marketplace using the <a href="market-builder.html">Market Builder</a> and set yourself apart from the competition!<br/><br/>Free white-label solution available on <a href="https://github.com/Unifty/UniftyDapp" target="_blank">Github</a>.</div>');
+                            _alert('<div style="font-size: 1.6rem;">Your Splash NFT has been successfully created!<br/</div>');
                         }
                     },
                     function(err){
@@ -1372,7 +1372,7 @@ function TncDapp() {
                     nftJsonUrl,
                     $('#nftErc1155Address').val(),
                     function (){
-                        toastr["info"]('Please wait for the transaction to finish.', "Updating NFT....");                        
+                        toastr["info"]('Please wait for the transaction to finish.', "Updating NFT....");
                         $("#nftSubmit").addClass("disabled");
                         $('#nftSubmit').html('Updating NFT');
                     },
@@ -1385,7 +1385,7 @@ function TncDapp() {
                     },
                     function(err){
                         toastr.remove();
-                        let errMsg = 'An error occurred with your NFT Update transaction.';                    
+                        let errMsg = 'An error occurred with your NFT Update transaction.';
                         toastr["error"](errMsg, "Error");
                         errorPopup("Error", errMsg, err.stack);
                         $("#nftSubmit").removeClass("disabled");
@@ -1469,7 +1469,7 @@ function TncDapp() {
                     function(err){
                         try{
                             toastr.remove();
-                            let errMsg = 'An error occurred with your new Collection transaction. Do you have sufficient funds?';                    
+                            let errMsg = 'An error occurred with your new Collection transaction. Do you have sufficient funds?';
                             toastr["error"](errMsg, "Error");
                             errorPopup("Error", errMsg, err.stack);
                             $("#erc1155Submit").removeClass("disabled");
@@ -1511,7 +1511,7 @@ function TncDapp() {
                     function(err){
                         try{
                             toastr.remove();
-                            let errMsg = 'An error occurred with your updated Collection transaction.';                    
+                            let errMsg = 'An error occurred with your updated Collection transaction.';
                             toastr["error"](errMsg, "Error");
                             errorPopup("Error", errMsg, err.stack);
                             $("#erc1155Submit").removeClass("disabled");

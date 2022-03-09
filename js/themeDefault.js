@@ -2,6 +2,7 @@ $(document).ready(function () {
   if (isMacintosh()) {
     $("body").addClass("defaultPointer");
   }
+  $("body").addClass("dark-edition");
 
   removingShopButton()
 });
@@ -28,10 +29,10 @@ function isMacintosh() {
 
 function removingShopButton(){
   let url = window.location
-  
+
   if(url.href.indexOf("rinkeby") != -1 || url.href.indexOf("celo") != -1 || url.href.indexOf("matic") != -1){
     let $elements = $(".footer li.shop:visible");
-  
+
     $elements.css("display", "none");
   }
 }

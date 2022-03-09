@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+    <title>NFT Market - Unifty</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/Unifty_fav.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/Unifty_fav.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/web3.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/handlebars.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script type="text/javascript" src="js/ipfs.js"></script>
+    <script type="text/javascript" src="js/buffer.js"></script>
+    <script type="text/javascript" src="js/config.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/misc.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/nifABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/genesisABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/farmABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/farmShopABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/erc20ABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/univ2ABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/marketABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/swapABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/marketWrapABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/bridgeInABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/bridgeOutABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/uniftyverseABI.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/lib.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/lib-bridge.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/lib-market.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/market-dapp.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/dapp-init.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/cookie.js?v=1.9.13"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/sidebar.js"></script>  
+    <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="assets/js/plugins/chartist.min.js"></script>
+    <script src="assets/js/plugins/bootstrap-notify.js"></script>
+    <script src="assets/js/material-dashboard.js?v=2.1.0" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ramp-network/ramp-instant-sdk@2.3.0/dist/ramp-instant-sdk.umd.js" integrity="sha256-heFylj/fcCZffQpQuqUmrk1e08vdaGcpw0w9mWGnbz4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            new ClipboardJS('.btn-clipboard');
+        });
+    </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+          integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <style type="text/css">
+        .dark-edition .modal .form-control {
+            color: #8b92a9;
+        }
+
+        .dark-edition .modal .form-control,
+        .is-focused .dark-edition .modal .form-control {
+            background-color: #eee;
+            padding: 5px;
+        }
+
+        .nftListing {
+            min-width: 300px;
+        }
+
+        .btn-outline {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            -o-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+        }
+
+        .btn-clipboard {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            -o-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            padding: 0 !important;
+        }
+
+        .fa-clipboard,
+        .fa-external-link {
+            font-size: 0.8rem !important;
+        }
+
+        .traits-collapse ul li {
+            border-bottom: 1px solid #8b92a9;
+        }
+
+        .traits-collapse ul li:last-child {
+            border-bottom: none;
+        }
+
+        .dark-edition .card .card-body .card-description {
+            color: #8b92a9;
+        }
+
+        .description,
+        .card-description,
+        .footer-big p {
+            color: #8b92a9;
+        }
+
+        .title,
+        .title a,
+        .card-title,
+        .card-title a,
+        .info-title,
+        .info-title a,
+        .footer-brand,
+        .footer-brand a,
+        .footer-big h5,
+        .footer-big h5 a,
+        .footer-big h4,
+        .footer-big h4 a,
+        .media .media-heading,
+        .media .media-heading a {
+            color: #8b92a9;
+        }
+
+        body {
+            color: #8b92a9;
+        }
+
+        .navbar,
+        .navbar-text a {
+            color: inherit;
+			display:none;
+        }
+        #incomingSwapRequests .row, #outgoingSwapRequests .row{
+            margin-right: 0 !important;
+        }
+        #swapRequestsModal .modal-dialog, #nftSwapModal .modal-dialog, #nftsView .modal-dialog{
+            max-width: 900px !important;
+        }
+        input[name='nftMode']{
+            opacity: unset !important;
+            position: unset !important;
+            width: unset !important;
+            height: unset !important;
+            margin-right: -20px !important;
+        }
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+</head>
+<body>
+
+<script src="js/themeDefault.js"></script>
+
+<div class="main-panel">
+
+	<div class="content">
+
+        <!-- HEADER -->
+        <div class="custom-header">
+            <div class="custom-header__title">Splash</div>
+            <div class="custom-header__dropdowns">
+
+                <div class="dropdown ml-3 mr-3 dropdown--chains">
+                    <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ethereum
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="https://unifty.io/"><img src="assets/img/network-icons/ethereum_logo.svg">Ethereum</a>
+                        <a class="dropdown-item" href="https://unifty.io/xdai/"><img src="assets/img/network-icons/xdai_logo.svg">xDai</a>
+                        <a class="dropdown-item" href="https://unifty.io/bsc/"><img src="assets/img/network-icons/binance_logo.svg">Binance Smart Chain</a>
+                        <a class="dropdown-item" href="https://unifty.io/avalanche/"><img src="assets/img/network-icons/avalanche_logo.svg">Avalanche</a>
+                        <a class="dropdown-item" href="https://unifty.io/celo/"><img src="assets/img/network-icons/celo_logo.svg">Celo</a>
+                        <a class="dropdown-item" href="https://unifty.io/matic/"><img src="assets/img/network-icons/polygon-logo.svg">Polygon (Matic)</a>
+                        <a class="dropdown-item" href="https://unifty.io/moonbeam-alpha/"><img src="assets/img/network-icons/rinkeby_logo.svg">Moonbeam (Alpha)</a>
+                        <a class="dropdown-item" href="https://unifty.io/rinkeby/"><img src="assets/img/network-icons/rinkeby_logo.svg">Rinkeby (Testnet)</a>
+                      </div>
+                </div>
+
+                <div class="theme-toggler">
+                    <label for="themeSwitch" class="theme-options">
+                      <span class="material-icons-round light-mode">
+                        light_mode
+                      </span>
+                      <span class="material-icons-round dark-mode">
+                        dark_mode
+                      </span>
+                    </label>
+                    <input type="checkbox" id="themeSwitch" name="themeSwitch" />
+                </div>
+
+            </div>
+        </div>
+        <!-- HEADER END -->
+
+        <div class="content__welcome-text">
+            <p>
+                The Splash NFT Market is a fully decentralized marketplace to buy, sell and swap NFTs. 
+            </p>
+        </div>
+		
+	<div class="container-fluid featured-farms mb-5">
+
+        <div class="card farm-card">
+          <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+              <img src="assets/img/splash_logo.png">
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Liquidity Farm (Mainnet)</h3>
+            <a class="btn btn-primary card-toggler first-collapsed" data-toggle="collapse" href="#multiCollapseDesc19" role="button" aria-expanded="false" aria-controls="multiCollapseDesc19">
+              Read more...
+            </a>
+            <div class="collapse multi-collapse" id="multiCollapseDesc19">
+              <p class="card-description">
+                Support Unifty and take part in our awesome liquidity incentive!
+              </p>
+            </div>
+            <a class="btn btn-primary card-toggler first-collapsed" data-toggle="collapse" href="#multiCollapseLinks19" role="button" aria-expanded="false" aria-controls="multiCollapseLinks19">
+              Open Farms
+            </a>
+            <div class="collapse multi-collapse" id="multiCollapseLinks19">
+              <a class="card-link"
+                 href="https://unifty.io/farm-view.html?address=0xC6AD13d8862b64346bCa42e966d93e0BB4bFF9F8"><i
+                      class="fa fa-external-link"></i>Open Farm, Ethereum</a>
+
+            </div>
+          </div>
+        </div>       
+      </div>
+
+       
+            
+    </div>
+
+    <div class="sidebar-text">
+            
+        <div class="sidebar-text left" >
+          <span>
+            <i class="material-icons">copyright</i>
+            Unifty Development d.o.o.
+          </span>
+          <span>
+            All rights reserved
+          </span>
+        </div>
+        <div class="sidebar-text icons" >
+            <span class="navbar-text">  
+              <a href="https://t.me/unifty" target="_blank">
+                <img src="assets/img/social-icons/telegram.svg">
+              </a>
+              <a href="https://discord.gg/5ZBTgnAd9s" target="_blank">
+                <img src="assets/img/social-icons/discord.svg">
+              </a>
+              <a href="https://twitter.com/unifty_com" target="_blank">
+                <img src="assets/img/social-icons/twiter.svg">
+              </a>
+              
+              <a href="https://www.linkedin.com/company/unifty/" target="_blank">
+                <img src="assets/img/social-icons/linkedin.svg">             
+              </a>
+              <a href="https://www.youtube.com/channel/UCcObER-bpLPf8ni3vhDhUTw" target="_blank">
+                <img src="assets/img/social-icons/youtube.svg">             
+              </a>
+              <a href="https://www.instagram.com/uniftyofficial/" target="_blank">
+                <img src="assets/img/social-icons/instagram.svg">
+              </a>
+
+            </span>
+        </div>
+
+	</div>
+<script src="js/ramp-init.js"></script>
+<script src="js/themeSwitch.js"></script>
+
+</body>
+</html>
